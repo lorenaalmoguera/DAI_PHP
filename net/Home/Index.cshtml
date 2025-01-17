@@ -1,0 +1,145 @@
+﻿@using Microsoft.AspNetCore.Authentication
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "Home Page";
+    bool isAuthenticated = User.Identity.IsAuthenticated;
+}
+
+<div class="text-center">
+    <h1 class="display-4">ASP.NET Practica de Lorena Almoguera Romero</h1>
+    
+    @if (isAuthenticated)
+    {
+        <div>
+            <a id="consultaButton" class="btn btn-primary" asp-controller="Home" asp-action="Consulta">Consulta</a>
+            <a id="insertarButton" class="btn btn-primary" asp-controller="Home" asp-action="Insertar">Insertar</a>
+        </div>
+    }
+    else
+    {
+        <button id="loginBtn" class="btn btn-primary">Login</button>
+    }
+</div>
+
+<!-- The Modal -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Login</h2>
+        <form id="loginForm" method="post" action="/Login">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" class="form-control" />
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+            <p id="loginError" class="text-danger" style="display:none;">Usuario o Password incorrectos. Intentelo de nuevo.</p>
+        </form>
+    </div>
+</div>
+
+<!-- Modal Styles -->
+<style>
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+        max-width: 400px; /* Maximum width */
+    }
+
+    /* The Close Button */
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+
+<!-- JavaScript to Handle Modal and Login -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var loginBtn = document.getElementById("loginBtn");
+        var modal = document.getElementById("loginModal");
+        var closeModal = document.getElementsByClassName("close")[0];
+        var loginForm = document.getElementById("loginForm");
+        var loginError = document.getElementById("loginError");
+        var consultaButton = document.getElementById("consultaButton");
+        var insertarButton = document.getElementById("insertarButton");
+
+        // Open the modal when the login button is clicked
+        loginBtn.addEventListener("click", function() {
+            modal.style.display = "block";
+        });
+
+        // Close the modal when the close button is clicked
+        closeModal.addEventListener("click", function() {
+            modal.style.display = "none";
+        });
+
+        // Close the modal if the user clicks anywhere outside of the modal
+        window.addEventListener("click", function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+
+        // Handle the login form submission
+        if (loginForm) {
+            loginForm.addEventListener("submit", function (e) {
+                e.preventDefault(); // Prevent the default form submission
+                
+                var formData = new FormData(loginForm);
+                var username = formData.get("username");
+                var password = formData.get("password");
+
+                // Perform a mock authentication check
+                if (username === "admin" && password === "1234") {
+                    // Mock successful login
+                    alert("Credenciales Correctas, BIENVENIDO!");
+                    loginError.style.display = "none";
+                    modal.style.display = "none"; // Close the modal
+
+                    // Update the UI to show the buttons
+                    document.querySelector('.text-center').innerHTML = `
+                        <h1 class="display-4">ASP.NET Practica de Lorena Almoguera Romero</h1>
+                        <div>
+                            <a class="btn btn-primary" href="/Home/Consulta">Consulta</a>
+                            <a class="btn btn-primary" href="/Home/Insertar">Insertar</a>
+                        </div>
+                    `;
+                } else {
+                    loginError.style.display = "block"; // Show error message
+                }
+            });
+        }
+    });
+</script>

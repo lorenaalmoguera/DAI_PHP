@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Consultar";
+}
+
+@model IEnumerable<Ciudad>
+
+<div class="text-center">
+    <form asp-controller="HOME" asp-action="listarCiudades">
+        <button type="submit" class ="btn btn-primary">Cargar Ciudades</button>
+    </form>
+</div>
+
+<div class ="text-center" style ="height: 400px; overflow: auto;">
+    @if (Model is not null){
+        <table>
+            <tbody style ="overflow-y: auto;">
+                <tr>
+                    <th>
+                       IDCIUDAD 
+                    </th>
+                    <th>
+                        CIUDAD
+                    </th>
+                    <th>
+                        TASA_AEROPUERTO
+                    </th>
+                </tr>
+                @foreach (var Ciudad in Model){
+                    <tr>
+                        <td>@Ciudad.IDCIUDAD</td>
+                        <td>@Ciudad.CIUDAD</td>
+                        <td>@Ciudad.TASA_AEROPUERTO</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

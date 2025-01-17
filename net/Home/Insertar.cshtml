@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Insertar";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Inserta</h1>
+    <form asp-controller="HOME" asp-action="insertarCompania" runat="server">
+        <div class="row">
+            <div>
+                <label class ='form-label'>Nombre Compania</label>
+                <input name ='nombrecompania' type='text' id='nombrecompania' class='form-control' required />
+            </div>
+        </div>
+        <input type ='submit' class ='btn btn-primary btn-primary' value ='Insertar' name="submitbtn" id="submitbtn"/>
+    </form>
+</div>
+
+<div class ="text-center" style="height: 400px; overflow: auto;">
+    @if (ViewBag is not null){
+        <p>@ViewBag.msg</p>
+    }
+</div>
