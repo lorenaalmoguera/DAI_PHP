@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- #include file="conexionsegura.asp" -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Principal</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+        .header-container {
+            text-align: center;
+            padding: 20px;
+            background-color: #343a40;
+            color: white;
+        }
+        .header-container img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        .menu-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .menu-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        .menu-list li {
+            margin: 20px 0;
+        }
+        .menu-list a {
+            font-size: 24px;
+            padding: 10px 20px;
+            display: block;
+            color: white;
+            background-color: #343a40;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .menu-list a:hover {
+            background-color: #495057;
+        }
+    </style>
+</head>
+<body>
+    <header class="header-container">
+        <h1>AMERICAN AIRLINES</h1>
+        <img src="estilo/logo.jpg" alt="Imagen de la Web">
+    </header>
+
+    <div class="menu-container">
+        <ul class="menu-list">
+            <li>
+                <a href="busqueda.asp">Busqueda vuelos</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

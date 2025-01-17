@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Inicial</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Container Styles */
+        #container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center; /* Center the content */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        ul li {
+            margin: 10px 0;
+        }
+
+        ul li a {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        ul li a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Content Area */
+        #content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Image Styles */
+        #menuImage {
+        width: 400px;  /* Set the width to 400 pixels */
+        height: auto;  /* Height will adjust automatically to maintain aspect ratio */
+        margin-bottom: 20px; /* Space between the image and the title */
+    }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <!-- Image above the menu -->
+        <img id="menuImage" src="img/logo.jpg" alt="Menu Image">
+        
+        <h1>MENU AMERICAN AIRLINES<br>PRACTICA LORENA ALMOGUERA JSP</h1>
+        <ul>
+            <li>
+                <a href="conslt_reservas.jsp">Consultar las reservas</a>
+            </li>
+            <li>
+                <a href="insert_vuelos.jsp">Insercción de vuelos</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'Aremiscentsmile';
+    src: url('/estilo/fuentes/areminiscentsmile-Regular.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color:  #f0f0f0; ;
+    color: #333;
+    text-align: center;
+    padding: 2% 0;
+    max-width: 800px;
+    margin: auto;
+}
+
+#return a {
+    color: #aad2fd; /* Color azul característico */
+    text-decoration: none; /* Quita el subrayado por defecto */
+    transition: color 0.3s ease-in-out; /* Transición suave para el cambio de color */
+}
+
+#return a:hover{
+    color: white; /* Un azul más oscuro al pasar el cursor */
+    text-decoration: underline; /* Añade un subrayado al pasar el cursor */
+}
+
+#return {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#return:hover {
+    background-color: #0056b3;
+    color: #dcdcdc;
+    text-decoration: none;
+}
+
+/* Estilizando la tabla */
+table {
+    margin-top: 10px;
+    width: 80%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+
+/* Encabezado de la tabla */
+th, td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Fila de encabezado */
+th {
+    background-color: #007bff;
+    color: white;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+/* Estilo de las celdas de las filas */
+td {
+    padding: 15px;
+    text-align: left;
+}
+
+/* Estilo para el enlace de eliminar */
+table a {
+    color: #ff6347; /* Un rojo tomate para la acción de eliminar */
+    text-decoration: none; /* Remueve el subrayado del enlace */
+}
+
+/* Efecto hover para el enlace de eliminar */
+table a:hover {
+    text-decoration: underline; /* Agrega un subrayado al pasar el cursor */
+    color: #ff0000; /* Cambia a un rojo más intenso al pasar el cursor */
+}
+
+/* Centrar contenido de las celdas con la etiqueta center */
+center {
+    display: block;
+}
+
+/* Estilizando la X de eliminar */
+a b {
+    font-size: 1.2rem; /* Hace la X más grande y notoria */
+    font-weight: bold;
+}

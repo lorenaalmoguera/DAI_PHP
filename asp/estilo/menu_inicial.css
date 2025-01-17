@@ -1,0 +1,88 @@
+@font-face {
+    font-family: 'Aremiscentsmile';
+    src: url('/estilo/fuentes/areminiscentsmile-Regular.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color:  #f0f0f0; ;
+    color: #333;
+    text-align: center;
+    padding: 2% 0;
+    max-width: 800px;
+    margin: auto;
+}
+
+h1{
+    font-family: 'Aremiscentsmile', sans-serif;
+    font-size: 2.5rem;
+    color:#001225;
+    margin-bottom: 20px;
+}
+
+#container  {
+    background-color:#dedede;
+    padding-top: 5%;
+    padding-bottom: 10%;
+    border-radius: 130px;
+}
+
+a {
+    position: relative;
+    display: inline-block;
+    color: #007bff; /* Color del texto del enlace normal */
+    text-decoration: none;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+    line-height: 1.5;
+    overflow: hidden;
+    transition: color 0.3s ease, transform 0.3s ease; /* Asegúrate de que la transición incluya el color */
+    padding-top: 5px;
+    letter-spacing: 5px;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    bottom: 0;
+    background-color: #007bff; /* Color del subrayado */
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Añade transición para el color del subrayado */
+}
+
+a:hover {
+    color: #0056b3; /* Color del texto del enlace en hover */
+}
+
+a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    background-color: #0056b3; /* Color del subrayado en hover */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 5px 8px rgba(0,0,0.8,0.8);
+    display: block;
+    width: auto;
+    text-align: center;
+    max-width: 300px;
+    margin: 20px auto;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Asegúrate de que la transición incluya el color */
+}
+
+li:hover {
+    background-color: lemonchiffon;
+}
